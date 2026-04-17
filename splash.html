@@ -82,17 +82,19 @@
 
         #opcion-b .squares-group {
             transform: translateX(200px);
-            /* Curva más orgánica (ease-out-expo) y un poco más de duración para mayor fluidez */
-            animation: moveLeftB 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            /* Curva más suave y mayor duración para evitar cortes bruscos */
+            animation: moveLeftB 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
             animation-delay: 1.0s;
+            /* Se solapa levemente con el final del último cuadrado */
         }
 
         #opcion-b .text-group path {
             fill: #ffffff;
             opacity: 0;
-            /* Aparece suavemente acompañando el movimiento */
-            animation: fadeInB 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 1.2s;
+            /* Aparece acompañando el final del movimiento de los cuadrados */
+            animation: fadeInB 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation-delay: 1.3s;
+            /* Termina exactamente a los 2.2s */
         }
 
         @keyframes moveLeftB {
